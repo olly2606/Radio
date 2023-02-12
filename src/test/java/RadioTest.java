@@ -13,6 +13,15 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
     @Test
+    public void shouldGetCurrentVolume() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(5);
+        radio.next ();
+        int expected = 5;
+        int actual = radio.getCurrentVolume();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
     public void shouldSetPrevNumber() {
         Radio radio = new Radio();
         radio.setCurrentNumber(4);
