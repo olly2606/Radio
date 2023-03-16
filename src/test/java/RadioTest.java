@@ -15,7 +15,7 @@ public class RadioTest {
     @Test
     public void shouldNotSetNextNumberBAboveMax() {
         Radio radio = new Radio();
-        radio.setCurrentNumber(11);
+        radio.setCurrentNumber(9);
         radio.next ();
         int expected = 0;
         int actual = radio.getCurrentNumber();
