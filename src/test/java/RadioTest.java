@@ -6,16 +6,16 @@ public class RadioTest {
     @Test
     public void shouldSetNextNumber() {
         Radio radio = new Radio();
-        radio.setCurrentNumber(4);
+        radio.setCurrentNumber(8);
         radio.next ();
-        int expected = 5;
+        int expected = 9;
         int actual = radio.getCurrentNumber();
         Assertions.assertEquals(expected, actual);
     }
     @Test
     public void shouldNotSetNextNumberIfAboveMax() {
         Radio radio = new Radio();
-        radio.setCurrentNumber(9);
+        radio.setCurrentNumber(11);
         radio.next ();
         int expected = 0;
         int actual = radio.getCurrentNumber();
