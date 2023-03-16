@@ -3,6 +3,16 @@ package org.example;
 public class Radio {
     private int currentNumber;
     private int currentVolume;
+    private int maxNumber;
+
+
+    public Radio () {
+        this.maxNumber = 9;
+    }
+
+    public Radio(int stationsCount) {
+        this.maxNumber = stationsCount - 1;
+    }
 
     public int getCurrentNumber() {
         return currentNumber;
@@ -12,7 +22,7 @@ public class Radio {
         if (currentNumber < 0) {
             return;
         }
-        if (currentNumber > 9) {
+        if (currentNumber > maxNumber) {
             return;
         }
         this.currentNumber = currentNumber;
@@ -26,14 +36,14 @@ public class Radio {
         if (currentVolume < 0) {
             return;
         }
-        if (currentVolume > 10) {
+        if (currentVolume > 100) {
             return;
         }
         this.currentVolume = currentVolume;
     }
 
     public void next() {
-        if (currentNumber != 9) {
+        if (currentNumber != maxNumber) {
             currentNumber++;
         } else {
             currentNumber = 0;
@@ -44,15 +54,15 @@ public class Radio {
         if (currentNumber != 0) {
             currentNumber--;
         } else {
-            currentNumber = 9;
+            currentNumber = maxNumber;
         }
     }
 
     public void addVolume() {
-        if (currentVolume != 10) {
+        if (currentVolume != 100) {
             currentVolume++;
         } else {
-            currentVolume = 0;
+           return;
         }
     }
 
@@ -60,7 +70,7 @@ public class Radio {
         if (currentVolume != 0) {
             currentVolume--;
         } else {
-            currentVolume = 9;
+            return;
         }
     }
 }
